@@ -1,0 +1,34 @@
+<!doctype html>
+<html ng-app="myApp">
+  <head >
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+    <script src="public/js/main.js"></script>
+	 <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="css/foundation.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/styles.css"/>
+  </head>
+  <body ng-controller="FrameController">
+
+    <div class="row">
+      <h1>NPR player</h1>
+    </div>
+
+    <div class="container row">
+      <div class="large-8 small-8 columns">
+      <h2>Player</h2>
+        <div ng-controller="PlayerController">
+          <ul id="programs_list" class="">
+            <li ng-repeat="program in programs">
+              <span npr-link play='play(program)' ng-model="program"></span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="large-4 small-4 columns" ng-controller="RelatedController">
+        <h2>Related content</h2>
+      </div>
+    </div>
+  
+  </body>
+</html>
